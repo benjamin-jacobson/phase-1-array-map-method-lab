@@ -11,6 +11,20 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+
+function titleCased(sent){
+  let newArr = []
+  const splitSentence = sent.split(' ')
+  for (let str of splitSentence){
+    const str2 = str.charAt(0).toUpperCase() + str.slice(1);
+    newArr.push(str2)
+  }
+  let text = newArr.join(' ')
+  return text
 }
+
+const outputs = tutorials.map(titleCased)
+
+
+// getSentence("i like books.")
+console.log(outputs)
